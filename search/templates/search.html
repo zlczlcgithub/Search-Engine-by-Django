@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Engine</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% for form in formset %}
+            {{ form }}<br>
+        {% endfor %}
+        {% csrf_token %}
+        <button type="submit">Search</button>
+    </form>
+    <hr>
+
+</body>
+</html>
