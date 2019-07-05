@@ -6,13 +6,17 @@
 </head>
 <body>
     <form action="" method="POST">
-        {% for form in formset %}
-            {{ form }}<br>
-        {% endfor %}
+
+        {{ formset.management_form }}
+        <table>
+            {% for form in formset %}
+            {{ form }}
+            {% endfor %}
+        </table>
         {% csrf_token %}
         <button type="submit">Search</button>
     </form>
     <hr>
-
+{% if search_list %}<p><strong>{{ search_list }}</strong></p>{% endif %}
 </body>
 </html>
